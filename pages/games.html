@@ -13,12 +13,13 @@
 
 <body>
     <main class="content-games">
+        
         <div class="card01">
             <div class="img-top-card">
                 <img src="../assets/imagens/img-card01.jpg" alt="" height="200px">
             </div>
             <div class="txt-card">
-                <p>Completar a palavra</p>
+                <p>Desafio das letras</p>
             </div>
             <!-- Botão para acionar modal -->
             <button type="button" class="btn btn-primary" onclick="musicGame()" data-toggle="modal"
@@ -33,7 +34,19 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="TituloModalCentralizado">Complete as palavras</h5>
+                            <h5 class="modal-title" id="TituloModalCentralizado">Escreva o que está nas figuras
+                            </h5>
+                            <div class="btn-music">
+                                <button onclick="stopMusic()"><span class="material-symbols-outlined">
+                                    volume_off
+                                    </span>
+                                </button>
+                                <button onclick="musicGame()">
+                                    <span class="material-symbols-outlined">
+                                        volume_up
+                                    </span>
+                                </button>
+                            </div>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                 <span aria-hidden="true">&times;</span>
                             </button>
