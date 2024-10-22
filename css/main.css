@@ -279,18 +279,7 @@ footer{
     transform: scale(1.2);
     transition: .6s;
 }
-#letras{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 30px;
-}
-.campoLetras{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+
 
 @keyframes swing {
     0% {
@@ -381,6 +370,8 @@ footer{
     }
     .card01, .card02{
         height: 100%;
+        align-items: center;
+        width: 70%;
     }
     .content-games{
         display: grid;

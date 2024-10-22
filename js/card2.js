@@ -1,4 +1,4 @@
-const buttoms = document.querySelectorAll('.vogal');
+const buttoms = document.querySelectorAll('.letra');
 
 buttoms.forEach(function(buttom){
     buttom.addEventListener('click', () => {

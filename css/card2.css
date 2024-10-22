@@ -1,19 +1,65 @@
-.imgObj, .audio{
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+:root{
+    --primeira-color: #00143F;
+    --segunda-color: #0CF0DF;
+    --terceira-color: #0551F2;
+    --quarta-color: #046EF3;
+    --quinta-color: #9CBF4E;
+    --sexta-color: #0A4018;
+    --setima-color: #F25C5C;
+    --oitava-color: #FFEB3B;
+    --nona-color: #FF9800;
+    --decima-color: #00BCD4;
+    --fonte-principal: "Bubblegum Sans";
+}
+
+#letras{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    font-family: var(--fonte-principal);
+    font-size: 2vw;
+}
+.campoLetras{
+    width: 100%;
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
-.palavra{
-    height: 200px;
+#letrasConsoates > #consoantesContent{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
+    gap: 20px;
 }
-#palavra, #palavra2, #palavra3{
-    background-color: var(--quarta-color);
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid white;
-    color: white;
-    cursor: pointer;
+#consoantesContent > .letra{
+    width: 50%;
+    height: 100%;
 }
+#consoantesContent{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    row-gap: 20px;
+}
+#letrasConsoantes{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 38px;
+    padding-top: 40px;
+}
+@media(max-width: 576px){
+    .modal{
+        padding: 0;
+    }
+    #letras{
+        font-size: 6vw;
+    }
+    .btn-primary{
+        height: 100%;
+    }
+}
+
