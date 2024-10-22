@@ -9,6 +9,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
         <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/card2.css">
 </head>
 
 <body>
@@ -180,11 +181,60 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="card02">
+            <div class="img-top-card">
+                <img src="../assets/imagens/top-card2.jpg" alt="" height="200px" width="100%">
+            </div>
+            <div class="txt-card">
+                <p>Conhecendo as letras</p>
+            </div>
+            <!-- Botão para acionar modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal"
+                data-target="#ExemploModalCentralizado02">
+                Jogar
+            </button>
+            <!-- Modal -->
 
+            <div class="modal fade" id="ExemploModalCentralizado02" tabindex="-1" role="dialog"
+                aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="TituloModalCentralizado">Conhecendo as letras
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="game-content">
+                                <div id="letras">
+                                    <h1>Vogais</h1>
+                                    <p>Toque nas letras para saber seu som</p>
+                                    <div class="campoLetras">
+                                        <button class="letra vogal" data-som="../assets/audio_letras/A.mp3">A</button>
+                                        <button class="letra vogal" data-som="../assets/audio_letras/E.mp3">E</button>
+                                        <button class="letra vogal" data-som="../assets/audio_letras/I.mp3">I</button>
+                                        <button class="letra vogal" data-som="../assets/audio_letras/O.mp3">O</button>
+                                        <button class="letra vogal" data-som="../assets/audio_letras/U.mp3">U</button>
+                                    </div>
+                                    
+                                </div>
+                                <div id="sons">
+
+                                </div>
+                            </div>   
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <script src="../js/main.js"></script>
+    <script src="../js/card2.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

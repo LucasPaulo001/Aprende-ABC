@@ -1,0 +1,19 @@
+.imgObj, .audio{
+    display: flex;
+    justify-content: center;
+}
+.palavra{
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+#palavra, #palavra2, #palavra3{
+    background-color: var(--quarta-color);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}

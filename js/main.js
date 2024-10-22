@@ -55,11 +55,10 @@ function mostrarProximaPalavra() {
         }
     } 
     else {
-        let jogador = localStorage.getItem('Nome');
         // Mensagem de finalização
-        dicaFem.innerHTML = 'Você completou todas as palavras! ' + jogador + ', Parabéns!';
+        dicaFem.innerHTML = 'Você completou todas as palavras! Parabéns!';
         dicaFem.style.display = 'flex';
-        
+
     }
 }
 
@@ -93,7 +92,7 @@ function insert(digit) {
 function enter() {
     let palavraAtual = palavras[indiceAtual]; // Pega a palavra atual
     let correta = true;
-
+    
     // Verifica se todas as letras estão corretas
     for (let i = 0; i < palavraAtual.length; i++) {
         if (resp[i].innerHTML.trim() === palavraAtual[i]) {
