@@ -379,6 +379,17 @@ footer{
     .modal{
         padding: 0;
     }
+    .card01, .card02{
+        height: 100%;
+    }
+    .content-games{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        row-gap: 20px;
+    }
 }
 @media (min-width: 576px) {
     .modal-dialog {
