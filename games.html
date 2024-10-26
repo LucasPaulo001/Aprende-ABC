@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/card2.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/card2.css">
 </head>
 
 <body>
+    <div id="local-coins">
+        <div class="img-coin">
+            <img src="assets/imagens/coin.png" alt="" height="80px">
+        </div>
+        <div id="coins">
+            0000
+        </div>
+    </div>
     <main class="content-games">
 
         <div class="card01">
             <div class="img-top-card">
-                <img src="../assets/imagens/img-card01.jpg" alt="" height="200px">
+                <img src="assets/imagens/img-card01.jpg" alt="" height="200px">
             </div>
             <div class="txt-card">
                 <p>Desafio das letras</p>
@@ -48,6 +56,17 @@
                                     </span>
                                 </button>
                             </div>
+                            <div class="local-score">
+                                <div id="score">
+                                    <div class="img-coin">
+                                        <img src="assets/imagens/coin.png" alt="" height="50px">
+                                    </div>
+                                    <div class="value-coin" id="coin">
+                                        0
+                                    </div>
+                                    
+                                </div>
+                            </div>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -58,9 +77,8 @@
                                     <div class="dica" id="dicaMasc">
                                         ...
                                     </div>
-                                    <div class="img-game">
-                                        <img class="masc person" src="../assets/imagens/mascote(masc).png" alt=""
-                                            height="200px">
+                                    <div class="img-game" id="personagem">
+                                        
                                     </div>
                                 </div>
                                 <div class="content-game icon">
@@ -78,7 +96,7 @@
                                         ...
                                     </div>
                                     <div class="img-game">
-                                        <img src="../assets/imagens/mascote(fem).png" alt="" height="200px">
+                                        <img src="assets/imagens/mascote(fem).png" alt="" height="200px">
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +202,7 @@
         </div>
         <div class="card02">
             <div class="img-top-card">
-                <img src="../assets/imagens/top-card2.jpg" alt="" height="200px" width="100%">
+                <img src="assets/imagens/top-card2.jpg" alt="" height="200px" width="100%">
             </div>
             <div class="txt-card">
                 <p>Conhecendo as letras</p>
@@ -214,58 +232,58 @@
                                         <p>Toque nas letras para saber seu som</p>
                                         <div class="campoLetras">
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/A.mp3">A</button>
+                                                data-som="assets/audio_letras/A.mp3">A</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/E.mp3">E</button>
+                                                data-som="assets/audio_letras/E.mp3">E</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/I.mp3">I</button>
+                                                data-som="assets/audio_letras/I.mp3">I</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/O.mp3">O</button>
+                                                data-som="assets/audio_letras/O.mp3">O</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/U.mp3">U</button>
+                                                data-som="assets/audio_letras/U.mp3">U</button>
                                         </div>
                                     </div>
                                     <div id="letrasConsoantes">
                                         <h1>Consoantes</h1>
                                         <div id="consoantesContent">
                                             <button class="letra consoate"
-                                                data-som="../assets/audio_letras/B.mp3">B</button>
+                                                data-som="assets/audio_letras/B.mp3">B</button>
                                             <button class="letra  consoate"
-                                                data-som="../assets/audio_letras/C.mp3">C</button>
+                                                data-som="assets/audio_letras/C.mp3">C</button>
                                             <button class="letra  consoate"
-                                                data-som="../assets/audio_letras/D.mp3">D</button>
+                                                data-som="assets/audio_letras/D.mp3">D</button>
                                             <button class="letra  consoate"
-                                                data-som="../assets/audio_letras/F.mp3">F</button>
+                                                data-som="assets/audio_letras/F.mp3">F</button>
                                             <button class="letra  consoate"
-                                                data-som="../assets/audio_letras/G.mp3">G</button>
+                                                data-som="assets/audio_letras/G.mp3">G</button>
                                             <button class="letra  consoate"
-                                                data-som="../assets/audio_letras/H.mp3">H</button>
+                                                data-som="assets/audio_letras/H.mp3">H</button>
                                             <button class="letra consoate"
-                                                data-som="../assets/audio_letras/K.mp3">K</button>
+                                                data-som="assets/audio_letras/K.mp3">K</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/L.mp3">L</button>
+                                                data-som="assets/audio_letras/L.mp3">L</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/M.mp3">M</button>
+                                                data-som="assets/audio_letras/M.mp3">M</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/N.mp3">N</button>
+                                                data-som="assets/audio_letras/N.mp3">N</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/P.mp3">P</button>
+                                                data-som="assets/audio_letras/P.mp3">P</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/Q.mp3">Q</button>
+                                                data-som="assets/audio_letras/Q.mp3">Q</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/R.mp3">R</button>
+                                                data-som="assets/audio_letras/R.mp3">R</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/S.mp3">S</button>
+                                                data-som="assets/audio_letras/S.mp3">S</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/T.mp3">T</button>
+                                                data-som="assets/audio_letras/T.mp3">T</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/V.mp3">V</button>
+                                                data-som="assets/audio_letras/V.mp3">V</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/X.mp3">X</button>
+                                                data-som="assets/audio_letras/X.mp3">X</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/Y.mp3">Y</button>
+                                                data-som="assets/audio_letras/Y.mp3">Y</button>
                                             <button class="letra vogal"
-                                                data-som="../assets/audio_letras/Z.mp3">Z</button>
+                                                data-som="assets/audio_letras/Z.mp3">Z</button>
                                         </div>
                                     </div>
                                 </div>
@@ -278,8 +296,8 @@
         </div>
     </main>
 
-    <script src="../js/main.js"></script>
-    <script src="../js/card2.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/card2.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

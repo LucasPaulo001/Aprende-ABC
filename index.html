@@ -7,8 +7,9 @@
     <title>Aprende ABC</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/card2.css">
 </head>
 
 <body>
@@ -18,12 +19,12 @@
                 <h1>Bem vindo ao Aprende <span class="A">A</span><span class="B">B</span><span class="C">C</span></h1>
             </div>
             <div class="menu">
-                <div class="img">
-                    <img src="assets/imagens/mascote(masc).png" alt="" height="400px">
+                <div class="img" id="mascMasc">
+                    
                 </div>
                 <div class="btn-name">
                     <div class="btn">
-                        <a href="pages/games.html">
+                        <a href="games.html">
                             <button class="button" onclick="effectSonoro()">
                                 Começar o jogo
                             </button>
@@ -33,8 +34,62 @@
                 <div class="img">
                     <img src="assets/imagens/mascote(fem).png" alt="" height="400px">
                 </div>
-
             </div>
+
+            <div class="local-personsBtn">
+                <!-- Botão para acionar modal -->
+                <button type="button" class="btn btn-primary btn-persons" data-toggle="modal"
+                    data-target="#ModalLongoExemplo">
+                    Personagens
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog"
+                    aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="TituloModalLongoExemplo">Personagens</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <main class="persons">
+                                    <div class="contnet-persons">
+                                        <div>
+                                            <h1>Você possui <span id="scoreCamp"></span> moedas</h1>
+                                        </div>
+                                        <div id="person01">
+                                            <img src="assets/imagens/giphy.gif" alt="" height="250px">
+                                        </div>
+                                        <div id="description">
+                                            <div id="value-person">
+                                                <img src="assets/imagens/coin.png" alt="" height="50px">
+                                                <div id="value">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <h2>Primeiro personagem (Habilidade: Ele fala a dica ao interagir com ele)</h2>
+                                            
+                                            <button id="buy">Comprar</button>
+                                            <span id="situation"></span>
+                                            
+                                        </div>
+                                        <br>
+                                        
+                                    </div>
+                                </main>
+                            </div>
+                            <div class="modal-footer">
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </section>
         <footer>
             Desenvolvido por Lucas Paulo &copy; 2024
@@ -42,6 +97,7 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/buyPerson.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

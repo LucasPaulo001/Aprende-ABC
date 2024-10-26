@@ -50,16 +50,80 @@
     text-align: center;
     gap: 38px;
     padding-top: 40px;
+    font-family: var(--fonte-principal);
+}
+.persons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.btn-persons{
+    height: 100px;
+    color: white;
+    border: 1px solid white;
+    font-family: var(--fonte-principal);
+    width: 100px;
+    color: white;
+    border: 1px solid #000000;
+    background-color: darkred;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.persons{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: var(--fonte-principal);
+    text-align: center;
+    gap: 60px;
+}
+#value-person{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2vw;
+    justify-content: center;
+}
+.local-personsBtn{
+    display: flex;
+    justify-content: center;
+}
+#scoreCamp{
+    color: yellow;
+}
+#buy{
+    background-color: var(--setima-color);
+    color: white;
+    border: 1px solid var(--red);
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+#situation{
+    background-color: var(--green);
+    padding: 10px;
+    border-radius: 10px;
+}
+.fade{
+    padding: 0;
 }
 @media(max-width: 576px){
     .modal{
         padding: 0;
     }
-    #letras{
+    #letras, #value, #local-coins, #score{
         font-size: 6vw;
     }
     .btn-primary{
         height: 100%;
+    }
+    #value{
+        font-size: 6vw;
     }
 }
 
