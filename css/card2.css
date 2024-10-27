@@ -76,6 +76,7 @@
 }
 .persons{
     display: flex;
+    flex-direction: column;
     align-items: center;
     color: white;
     font-family: var(--fonte-principal);
@@ -96,7 +97,7 @@
 #scoreCamp{
     color: yellow;
 }
-#buy{
+.buy{
     background-color: var(--setima-color);
     color: white;
     border: 1px solid var(--red);
@@ -104,13 +105,27 @@
     padding: 10px;
     cursor: pointer;
 }
-#situation{
-    background-color: var(--green);
+#situation, #situation2{
+    background-color: red;
     padding: 10px;
     border-radius: 10px;
 }
 .fade{
     padding: 0;
+}
+.modal-body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.btn-person{
+    background-color: var(--setima-color);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.namePerson{
+    color: var(--quinta-color);
 }
 @media(max-width: 576px){
     .modal{

@@ -212,8 +212,9 @@ footer{
 }
 .dica{
     font-family: var(--fonte-principal);
-    display: none;
-    font-size: 2vw;
+    /*display: none;*/
+    font-size: 19px;
+    padding: 10px;
     text-align: center;
 }
 .modal-header{
@@ -302,7 +303,7 @@ footer{
     color: yellow;
     font-size: 2vw;
 }
-@keyframes swing{
+/*@keyframes swing{
     0% {
         transform: rotate(0deg);
     }
@@ -318,7 +319,7 @@ footer{
     100% {
         transform: rotate(0deg);
     }
-}
+}*/
 @media(min-width: 1300px){
     a > .button{
         font-size: 20px;
@@ -352,10 +353,10 @@ footer{
         font-size: 6vw;
     }
     .game-top{
-        display: grid;
+        display: flex;
         justify-items: center;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+        flex-direction: column;
+        row-gap: 20px;
     }
     .icon{
         grid-row: 2;
@@ -402,6 +403,10 @@ footer{
         justify-items: center;
         row-gap: 20px;
     }
+    .content-game{
+        border-bottom: 2px solid;
+    }
+    
 }
 @media (min-width: 576px) {
     .modal-dialog {

@@ -4,6 +4,8 @@ let dicas = ['É um brinquedo', 'É um animal de estimação', 'É o melhor amig
 
 let voicePerson = ['assets/audio/personVoice/Voz(É um brinquedo).mp3', 'assets/audio/personVoice/Voz(É um animal de estimação).mp3', 'assets/audio/personVoice/Voz(É o melhor amigo do homem).mp3', 'assets/audio/personVoice/Voz(veículo).mp3', 'assets/audio/personVoice/voz(livro).mp3','assets/audio/personVoice/voz(sol).mp3', 'assets/audio/personVoice/voz(casa).mp3'];
 
+let dicaPersonSabichao = ['Sabia que a primeira bola de futebol era feita de couro e costurada à mão? Com o tempo, elas ficaram mais leves e ganhamos as bolas modernas de hoje!', 'Sabia que os gatos têm uma capacidade incrível de pular até seis vezes a sua própria altura? Eles também dormem cerca de 13 a 16 horas por dia!', 'Sabia que o olfato dos cachorros é até 100.000 vezes mais poderoso que o dos humanos? Eles conseguem farejar cheiros que nós nem imaginamos!', 'Você sabia que os primeiros carros funcionavam a vapor e que o carro moderno só começou a ser inventado em 1885 pelo alemão Karl Benz?', 'Você sabia que o livro mais antigo conhecido foi escrito há cerca de 5.000 anos? Era uma tabuinha de argila da antiga Mesopotâmia!', 'Sabia que a luz do sol demora cerca de 8 minutos e 20 segundos para chegar à Terra? O sol é tão grande que caberiam mais de um milhão de Terras dentro dele!', 'Casas podem ser de muitos tipos diferentes ao redor do mundo! Em alguns lugares, elas são feitas de madeira, em outros de pedra, barro ou até gelo, como as iglus!']
+
 let images = ['assets/imagens/obj_imagens/bola.png', 'assets/imagens/obj_imagens/gato.png', 'assets/imagens/obj_imagens/cachorro.png', 'assets/imagens/obj_imagens/carro.png', 'assets/imagens/obj_imagens/livro.png', 'assets/imagens/obj_imagens/sol.png', 'assets/imagens/obj_imagens/casa.png'];
 
 
@@ -12,10 +14,11 @@ let indiceAtual = 0;
 let cont = 0;
 let resp = [];
 let dicaMasc = document.getElementById('dicaMasc');
-let dicaFem = document.getElementById('dicaFem');
+let dicaSabichao = document.getElementById('dicaPerson')
+//let dicaFem = document.getElementById('dicaFem');
 let letrasContainer = document.getElementById('resp');
 const coin = document.getElementById('coin');
-let score = 0;
+let score = 9999;
 
 //Inserção da imagem do objeto
 let icon = document.getElementById('icon');
@@ -32,7 +35,7 @@ function mostrarProximaPalavra() {
         quantImg+=1;
         let palavraAtual = palavras[indiceAtual]; // Pega a palavra atual do array
         let dicaAtual = dicas[indiceAtual]; // Pega a dica correspondente
-        let voiceAtual = voicePerson[indiceAtual];
+        
         
         if(quantImg==1){
             let imageAtual = images[indiceAtual];// Pega a imagem correspondente
@@ -45,12 +48,14 @@ function mostrarProximaPalavra() {
         
         // Atualiza a dica no HTML
         dicaMasc.innerHTML = dicaAtual;
+        
         dicaMasc.style.display = 'flex';
 
         // Limpa as letras anteriores e reinicia contador
         letrasContainer.innerHTML = '';
         cont = 0;
         resp = [];
+        setTimeout(limpaCuriosidade, 7000);
 
         // Gera spans com underline para cada letra da palavra
         for (let i = 0; i < palavraAtual.length; i++) {
@@ -63,24 +68,27 @@ function mostrarProximaPalavra() {
     } 
     else {
         // Mensagem de finalização
-        dicaFem.innerHTML = 'Você completou todas as palavras! Parabéns!';
-        dicaFem.style.display = 'flex';
+        dicaSabichao.innerHTML = 'Você completou todas as palavras! Parabéns!';
+        dicaSabichao.style.display = 'flex';
 
     }
 }
-//Evento que aciona a voz do personagem com a dica
-if(localStorage.getItem('personagem')){
-    let quantAud = 0;
-    dicaEmAudio.addEventListener('mouseenter', ()=>{
-    if(quantAud) clearTimeout(quantAud);
-    //o setTimeout reinicia o áudio para que não sobreponha se a outro
-    quantAud = setTimeout( ()=>{let voz = new Audio(voicePerson[indiceAtual]);
-        voz.play();
-        console.log(voz);
-        console.log(quantAud);
-    }, 200)
-});
+//Evento que aciona a voz do personagem saltito com a dica
+if(localStorage.getItem('personagemLocal01')){
+        let quantAud = 0;
+        dicaEmAudio.addEventListener('mouseenter', ()=>{
+        if(quantAud) clearTimeout(quantAud);
+        //o setTimeout reinicia o áudio para que não sobreponha se a outro
+        quantAud = setTimeout( ()=>{let voz = new Audio(voicePerson[indiceAtual]);
+            voz.play();
+            console.log(voz);
+            console.log(quantAud);
+        }, 200)
+    });
 
+}
+function limpaCuriosidade(){
+    dicaSabichao.innerHTML = '';
 }
 // Função para iniciar a música ao iniciar o jogo
 var musicMain = null;
@@ -125,12 +133,13 @@ function enter() {
 
     // Se todas as letras estiverem corretas, avança para a próxima palavra
     if (correta) {
+        let curiosidade = dicaPersonSabichao[indiceAtual];
         let musicLvUp = new Audio('assets/audio/LevelUp.mp3');
         musicLvUp.play();
-        dicaFem.innerHTML = `Parabéns, você acertou!`;
         dicaMasc.innerHTML = palavraAtual + ' é a palavra correta! Está indo muito bem!';
+        dicaSabichao.innerHTML = curiosidade;
         indiceAtual++; // Avança para a próxima palavra
-        setTimeout(mostrarProximaPalavra, 4000); // Exibe a próxima palavra após 2 segundos
+        setTimeout(mostrarProximaPalavra, 5000); // Exibe a próxima palavra após 2 segundos
         score+=1;
         coin.innerHTML = `${score}`;
     }
@@ -147,7 +156,7 @@ function enter() {
 }
 //Informando o número de moedas no menu de cards
 let cashMenu = document.getElementById('coins');
-cashMenu.innerHTML = localStorage.getItem('score');
+cashMenu.innerHTML = 9999//localStorage.getItem('score');
 
 
 //A função de limpar volta para o estado inical do jogo no que diz respeito as respostas
