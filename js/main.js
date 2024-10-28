@@ -90,24 +90,38 @@ if(localStorage.getItem('personagemLocal01')){
 function limpaCuriosidade(){
     dicaSabichao.innerHTML = '';
 }
-// Função para iniciar a música ao iniciar o jogo
 var musicMain = null;
-function musicGame() {
-    if(!musicMain){
-        musicMain = new Audio('assets/audio/music_main.mp3');
-        musicMain.volume
+
+// Adiciona o evento para o botão com ID "open-game" ou "play"
+/*let playMusic = document.getElementById('open-game');
+playMusic.addEventListener('click', (element) => {
+    if (element.target.id === 'open-game' || element.target.id === 'play') {
+        play(); // Chama a função para tocar a música
     }
-    musicMain.play();
-    
+});*/
+
+function play() {
+    if (!musicMain) {
+        musicMain = new Audio('assets/audio/music_main.mp3');
+        musicMain.volume = 0.5; // Define o volume da música
+    }
+
+    // Tenta tocar a música e captura erros de permissão ou compatibilidade
+    musicMain.play().catch(error => {
+        console.error("Erro ao tentar reproduzir o áudio:", error);
+    });
 }
-// Função para pausar a música
-function stopMusic(){
+
+// Evento para pausar a música ao clicar no botão "stopMusic"
+//let stopMusicButton = document.getElementById('stopMusic');
+//stopMusicButton.addEventListener('click', stopMusic());
+
+function stopMusic() {
     if (musicMain) {
         musicMain.pause();        // Pausa a música
         musicMain.currentTime = 0; // Reseta a música para o início
     }
 }
-
 // Função para inserir a letra digitada
 function insert(digit) {
     if (cont < resp.length) {

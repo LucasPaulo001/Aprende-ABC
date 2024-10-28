@@ -110,13 +110,7 @@
     padding: 10px;
     border-radius: 10px;
 }
-.fade{
-    padding: 0;
-}
-.modal-body{
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
+
 .btn-person{
     background-color: var(--setima-color);
     color: white;
@@ -127,15 +121,20 @@
 .namePerson{
     color: var(--quinta-color);
 }
+.local-btn{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.img{
+    height: 300px;
+}
+.img > img{
+    height: 80%;
+}
 @media(max-width: 576px){
-    .modal{
-        padding: 0;
-    }
     #letras, #value, #local-coins, #score{
         font-size: 6vw;
-    }
-    .btn-primary{
-        height: 100%;
     }
     #value{
         font-size: 6vw;

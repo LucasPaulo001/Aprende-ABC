@@ -95,8 +95,8 @@ body{
     cursor: pointer;
 }
 a > .button:hover{
-    transform: scale(1.2);
     transition: .6s;
+    box-shadow: 2px 0px 16px 20px #F44336;
 }
 footer{
     width: 100%;
@@ -122,18 +122,98 @@ footer{
     cursor: pointer;
     width: 50%;
 }
-.btn-primary{
+/*Botão de personagens página home*/
+.btn-modal{
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 50%;
-    width: 50%;
     font-family: var(--fonte-principal);
 }
-/*.dica, .txt-dica, #resp{
-    background-color: blue;
-}*/
+
+/*Janela modal, parte externa*/
+.janelaModal{
+    position: absolute;
+    background-color: #00000082;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: arial;
+    color: rgba(255, 255, 255, 0.712);
+}
+/*Classe inserida a partir do js*/
+.janelaModal.abrir{
+    display: flex;
+}
+/*Animação de abertura*/
+.abrir .modal{
+    animation: abrirModal 0.4s ease-in-out;
+}
+/*Janela modal interna*/
+.modal{
+    background-color: rgb(2 2 50 / 58%);
+    padding: 0px 20px 20px;
+    width: 80%;
+    min-width: 50%;
+    height: 95%;
+    border-radius: 0px 0px 20px 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.733);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 9999;
+}
+/*Parte do header da janela modal*/
+.top-modal{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
+/*Botão de fechar*/
+#fechar{
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    border: 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+.btn-modal{
+    height: 60px;
+    width: 100px;
+    background-color: var(--setima-color);
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-modal:hover{
+    box-shadow: 0px 0px 20px 9px #E91E63;
+    transition: .5s;
+}
+/*Keyframes com a animação*/
+@keyframes abrirModal {
+    from{
+        transform: translate3d(-200px, 0, 0);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 .game-top{
     display: grid;
     grid-template-rows: 1fr;
@@ -147,16 +227,7 @@ footer{
     height: 100%;
     justify-content: space-evenly;
 }
-.modal-body{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    padding: 0;
-}
-.modal-content, .modal-dialog{
-    height: 100%;
-}
+
 .modal-content{
     background-color: var(--primeira-color);
     
@@ -303,23 +374,6 @@ footer{
     color: yellow;
     font-size: 2vw;
 }
-/*@keyframes swing{
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(5deg);
-    }
-    50% {
-        transform: rotate(-5deg);
-    }
-    75% {
-        transform: rotate(5deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}*/
 @media(min-width: 1300px){
     a > .button{
         font-size: 20px;
@@ -367,16 +421,6 @@ footer{
         width: 100%;
         align-items: center;
     }
-    .modal-body{
-        padding-top: 10px;
-        height: 100%;
-    }
-    .modal-content{
-        height: 115vh;
-    }
-    .modal-dialog{
-        height: 108vh;
-    }
     
     .letra{
         font-size: 6vw;
@@ -386,9 +430,6 @@ footer{
     }
     .dica{
         font-size: 6vw;
-    }
-    .modal{
-        padding: 0;
     }
     .card01, .card02{
         height: 100%;
@@ -401,16 +442,10 @@ footer{
         grid-template-rows: 1fr 1fr;
         align-items: center;
         justify-items: center;
-        row-gap: 20px;
+        row-gap: 60px;
     }
     .content-game{
         border-bottom: 2px solid;
     }
     
-}
-@media (min-width: 576px) {
-    .modal-dialog {
-        max-width: 1000px;
-        margin: 1.75rem auto;
-    }
 }

@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/card2.css">
@@ -31,174 +29,169 @@
                 <p>Desafio das letras</p>
             </div>
             <!-- Botão para acionar modal -->
-            <button type="button" class="btn btn-primary" onclick="musicGame()" data-toggle="modal"
-                data-target="#ExemploModalCentralizado">
-                Jogar
-            </button>
+            <div class="local-btn">
+                <div onclick="abrirModal('janelaModal')" data-modal-id="modal01" id="open-game" class="btn-modal">
+                    Personagens</div>
+            </div>
+
 
             <!-- Modal -->
+            <div id="janelaModal" class="janelaModal">
+                <div id="modal" class="modal">
+                    <div class="top-modal">
+                        <button id="fechar">X</button>
+                        <h2>Descreva o que vê nas figuras</h2>
+                    </div>
+                    <div class="btn-music">
+                        <button><span id="stop" class="material-symbols-outlined">
+                                volume_off
+                            </span>
+                        </button>
+                        <button>
+                            <span id="play" class="material-symbols-outlined">
+                                volume_up
+                            </span>
+                        </button>
+                    </div>
+                    <div class="local-score">
+                        <div id="score">
+                            <div class="img-coin">
+                                <img src="assets/imagens/coin.png" alt="" height="50px">
+                            </div>
+                            <div class="value-coin" id="coin">
+                                0
+                            </div>
 
-            <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
-                aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="TituloModalCentralizado">Escreva o que está nas figuras
-                            </h5>
-                            <div class="btn-music">
-                                <button onclick="stopMusic()"><span class="material-symbols-outlined">
-                                        volume_off
-                                    </span>
-                                </button>
-                                <button onclick="musicGame()">
-                                    <span class="material-symbols-outlined">
-                                        volume_up
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="local-score">
-                                <div id="score">
-                                    <div class="img-coin">
-                                        <img src="assets/imagens/coin.png" alt="" height="50px">
-                                    </div>
-                                    <div class="value-coin" id="coin">
-                                        0
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
-                        <div class="modal-body">
-                            <div class="game-top">
-                                <div class="content-game">
-                                    <div class="dica" id="dicaMasc">
-                                        ...
-                                    </div>
-                                    <div class="img-game" id="personagem">
-                                        
-                                    </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="game-top">
+                            <div class="content-game">
+                                <div class="dica" id="dicaMasc">
+                                    ...
                                 </div>
-                                <div class="content-game icon">
-                                    <div class="icon-resp">
-                                        <div id="icon">
+                                <div class="img-game" id="personagem">
 
-                                        </div>
-                                        <div id="resp">
-
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="content-game">
-                                    <div class="txt-dica dica" id="dicaPerson">
-                                        
+                            </div>
+                            <div class="content-game icon">
+                                <div class="icon-resp">
+                                    <div id="icon">
+
                                     </div>
-                                    <div class="img-game" id="personagem02">
-                                        
+                                    <div id="resp">
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="game-low">
-                                <div class="keyboard">
-                                    <div class="button-key">
-                                        <button class="letra" onclick="insert('A')" value="A">
-                                            A
-                                        </button>
-                                        <button class="letra" onclick="insert('B')" value="B">
-                                            B
-                                        </button>
-                                        <button class="letra" onclick="insert('C')" value="C">
-                                            C
-                                        </button>
-                                        <button class="letra" onclick="insert('D')" value="D">
-                                            D
-                                        </button>
-                                        <button class="letra" onclick="insert('E')" value="E">
-                                            E
-                                        </button>
-                                        <button class="letra" onclick="insert('F')" value="F">
-                                            F
-                                        </button>
-                                        <button class="letra" onclick="insert('G')" value="G">
-                                            G
-                                        </button>
-                                    </div>
-                                    <div class="button-key">
-                                        <button class="letra" onclick="insert('H')" value="H">
-                                            H
-                                        </button>
-                                        <button class="letra" onclick="insert('I')" value="I">
-                                            I
-                                        </button>
-                                        <button class="letra" onclick="insert('J')" value="J">
-                                            j
-                                        </button>
-                                        <button class="letra" onclick="insert('K')" value="K">
-                                            K
-                                        </button>
-                                        <button class="letra" onclick="insert('L')" value="L">
-                                            L
-                                        </button>
-                                        <button class="letra" onclick="insert('M')" value="M">
-                                            M
-                                        </button>
-                                        <button class="letra" onclick="insert('N')" value="N">
-                                            N
-                                        </button>
-                                    </div>
-                                    <div class="button-key">
-                                        <button class="letra" onclick="insert('O')" value="O">
-                                            O
-                                        </button>
-                                        <button class="letra" onclick="insert('P')" value="P">
-                                            P
-                                        </button>
-                                        <button class="letra" onclick="insert('Q')" value="Q">
-                                            Q
-                                        </button>
-                                        <button class="letra" onclick="insert('R')" value="R">
-                                            R
-                                        </button>
-                                        <button class="letra" onclick="insert('S')" value="S">
-                                            S
-                                        </button>
-                                        <button class="letra" onclick="insert('T')" value="T">
-                                            T
-                                        </button>
-                                        <button class="letra" onclick="insert('U')" value="U">
-                                            U
-                                        </button>
-                                    </div>
-                                    <div class="button-key">
-                                        <button class="letra" onclick="insert('V')" value="V">
-                                            V
-                                        </button>
-                                        <button class="letra" onclick="insert('X')" value="X">
-                                            X
-                                        </button>
-                                        <button class="letra" onclick="insert('Y')" value="Y">
-                                            Y
-                                        </button>
-                                        <button class="letra" onclick="insert('Z')" value="Z">
-                                            Z
-                                        </button>
-                                        <button class="letra enter" onclick="enter()">
-                                            Enter
-                                        </button>
-                                        <button class="letra clean" onclick="limpar()">
-                                            <span class="material-symbols-outlined">
-                                                backspace
-                                            </span>
-                                        </button>
-                                    </div>
+                            <div class="content-game">
+                                <div class="txt-dica dica" id="dicaPerson">
+
+                                </div>
+                                <div class="img-game" id="personagem02">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-low">
+                            <div class="keyboard">
+                                <div class="button-key">
+                                    <button class="letra" onclick="insert('A')" value="A">
+                                        A
+                                    </button>
+                                    <button class="letra" onclick="insert('B')" value="B">
+                                        B
+                                    </button>
+                                    <button class="letra" onclick="insert('C')" value="C">
+                                        C
+                                    </button>
+                                    <button class="letra" onclick="insert('D')" value="D">
+                                        D
+                                    </button>
+                                    <button class="letra" onclick="insert('E')" value="E">
+                                        E
+                                    </button>
+                                    <button class="letra" onclick="insert('F')" value="F">
+                                        F
+                                    </button>
+                                    <button class="letra" onclick="insert('G')" value="G">
+                                        G
+                                    </button>
+                                </div>
+                                <div class="button-key">
+                                    <button class="letra" onclick="insert('H')" value="H">
+                                        H
+                                    </button>
+                                    <button class="letra" onclick="insert('I')" value="I">
+                                        I
+                                    </button>
+                                    <button class="letra" onclick="insert('J')" value="J">
+                                        j
+                                    </button>
+                                    <button class="letra" onclick="insert('K')" value="K">
+                                        K
+                                    </button>
+                                    <button class="letra" onclick="insert('L')" value="L">
+                                        L
+                                    </button>
+                                    <button class="letra" onclick="insert('M')" value="M">
+                                        M
+                                    </button>
+                                    <button class="letra" onclick="insert('N')" value="N">
+                                        N
+                                    </button>
+                                </div>
+                                <div class="button-key">
+                                    <button class="letra" onclick="insert('O')" value="O">
+                                        O
+                                    </button>
+                                    <button class="letra" onclick="insert('P')" value="P">
+                                        P
+                                    </button>
+                                    <button class="letra" onclick="insert('Q')" value="Q">
+                                        Q
+                                    </button>
+                                    <button class="letra" onclick="insert('R')" value="R">
+                                        R
+                                    </button>
+                                    <button class="letra" onclick="insert('S')" value="S">
+                                        S
+                                    </button>
+                                    <button class="letra" onclick="insert('T')" value="T">
+                                        T
+                                    </button>
+                                    <button class="letra" onclick="insert('U')" value="U">
+                                        U
+                                    </button>
+                                </div>
+                                <div class="button-key">
+                                    <button class="letra" onclick="insert('V')" value="V">
+                                        V
+                                    </button>
+                                    <button class="letra" onclick="insert('X')" value="X">
+                                        X
+                                    </button>
+                                    <button class="letra" onclick="insert('Y')" value="Y">
+                                        Y
+                                    </button>
+                                    <button class="letra" onclick="insert('Z')" value="Z">
+                                        Z
+                                    </button>
+                                    <button class="letra enter" onclick="enter()">
+                                        Enter
+                                    </button>
+                                    <button class="letra clean" onclick="limpar()">
+                                        <span class="material-symbols-outlined">
+                                            backspace
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="card02">
             <div class="img-top-card">
@@ -208,106 +201,68 @@
                 <p>Conhecendo as letras</p>
             </div>
             <!-- Botão para acionar modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado02">
-                Conhecer
-            </button>
+            <div class="local-btn">
+                <div onclick="abrirModal('janelaModal02')" data-modal-id="modal02" id="open-card02" class="btn-modal">
+                    Personagens</div>
+            </div>
             <!-- Modal -->
 
-            <div class="modal fade" id="ExemploModalCentralizado02" tabindex="-1" role="dialog"
-                aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-                <div>
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="TituloModalCentralizado">Conhecendo as letras
-                                </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="game-content">
-                                    <div id="letras">
-                                        <h1>Vogais</h1>
-                                        <p>Toque nas letras para saber seu som</p>
-                                        <div class="campoLetras">
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/A.mp3">A</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/E.mp3">E</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/I.mp3">I</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/O.mp3">O</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/U.mp3">U</button>
-                                        </div>
-                                    </div>
-                                    <div id="letrasConsoantes">
-                                        <h1>Consoantes</h1>
-                                        <div id="consoantesContent">
-                                            <button class="letra consoate"
-                                                data-som="assets/audio_letras/B.mp3">B</button>
-                                            <button class="letra  consoate"
-                                                data-som="assets/audio_letras/C.mp3">C</button>
-                                            <button class="letra  consoate"
-                                                data-som="assets/audio_letras/D.mp3">D</button>
-                                            <button class="letra  consoate"
-                                                data-som="assets/audio_letras/F.mp3">F</button>
-                                            <button class="letra  consoate"
-                                                data-som="assets/audio_letras/G.mp3">G</button>
-                                            <button class="letra  consoate"
-                                                data-som="assets/audio_letras/H.mp3">H</button>
-                                            <button class="letra consoate"
-                                                data-som="assets/audio_letras/K.mp3">K</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/L.mp3">L</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/M.mp3">M</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/N.mp3">N</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/P.mp3">P</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/Q.mp3">Q</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/R.mp3">R</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/S.mp3">S</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/T.mp3">T</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/V.mp3">V</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/X.mp3">X</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/Y.mp3">Y</button>
-                                            <button class="letra vogal"
-                                                data-som="assets/audio_letras/Z.mp3">Z</button>
-                                        </div>
-                                    </div>
+            <!-- Modal -->
+            <div id="janelaModal02" class="janelaModal">
+                <div id="modal" class="modal">
+                    <div class="top-modal">
+                        <button id="fechar">X</button>
+                        <h2>Conhecendo as letras</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="game-content">
+                            <div id="letras">
+                                <h1>Vogais</h1>
+                                <p>Toque nas letras para saber seu som</p>
+                                <div class="campoLetras">
+                                    <button class="letra vogal" data-som="assets/audio_letras/A.mp3">A</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/E.mp3">E</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/I.mp3">I</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/O.mp3">O</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/U.mp3">U</button>
                                 </div>
-
+                            </div>
+                            <div id="letrasConsoantes">
+                                <h1>Consoantes</h1>
+                                <div id="consoantesContent">
+                                    <button class="letra consoate" data-som="assets/audio_letras/B.mp3">B</button>
+                                    <button class="letra  consoate" data-som="assets/audio_letras/C.mp3">C</button>
+                                    <button class="letra  consoate" data-som="assets/audio_letras/D.mp3">D</button>
+                                    <button class="letra  consoate" data-som="assets/audio_letras/F.mp3">F</button>
+                                    <button class="letra  consoate" data-som="assets/audio_letras/G.mp3">G</button>
+                                    <button class="letra  consoate" data-som="assets/audio_letras/H.mp3">H</button>
+                                    <button class="letra consoate" data-som="assets/audio_letras/K.mp3">K</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/L.mp3">L</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/M.mp3">M</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/N.mp3">N</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/P.mp3">P</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/Q.mp3">Q</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/R.mp3">R</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/S.mp3">S</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/T.mp3">T</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/V.mp3">V</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/X.mp3">X</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/Y.mp3">Y</button>
+                                    <button class="letra vogal" data-som="assets/audio_letras/Z.mp3">Z</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
 
+    </main>
+    <script src="js/openModais.js"></script>
     <script src="js/main.js"></script>
     <script src="js/card2.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
