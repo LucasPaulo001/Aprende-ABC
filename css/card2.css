@@ -132,12 +132,100 @@
 .img > img{
     height: 80%;
 }
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+#professorFala{
+    width: 50%;
+    text-align: center;
+}
+
+@keyframes texto {
+    from{
+        transform: translate3d(-80px, 0, 0);
+        color: rgba(0, 0, 0, 0.452);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+        color: white;
+    }
+}
+.infoBtn{
+    animation: colorInfo .5s infinite;
+}
+@keyframes colorInfo {
+    0%{
+        color: red;
+    }
+    50%{
+        color: white;
+    }
+    100%{
+        color: red;
+    }
+}
+.modalApresent{
+    height: 80%;
+    overflow: hidden;
+}
+.btnArrow{
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    height: 35px;
+    cursor: pointer;
+}
+.buttonsArrow{
+    display: flex;
+    gap: 20px;
+    width: 50%;
+    justify-content: space-around;
+}
+.btnArrow:hover .back{
+    animation: animationBack .3s;
+}
+.btnArrow:hover .next{
+    animation: animationNext .3s;
+}
+@keyframes animationBack {
+    from{
+        transform: translate3d(20px, 0, 0);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes animationNext {
+    from{
+        transform: translate3d(-20px, 0, 0);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+    }
+}
 @media(max-width: 576px){
     #letras, #value, #local-coins, #score{
         font-size: 6vw;
     }
     #value{
         font-size: 6vw;
+    }
+    .janelaModal{
+        height: auto;
+    }
+    .janelaApresentation{
+        height: 100vh;
+    }
+    .header{
+        flex-direction: column-reverse;
+        padding: 16px;
+    }
+    #professorFala{
+        width: 100%;
     }
 }
 

@@ -13,8 +13,15 @@
 <body>
     <main class="content">
         <section>
-            <div class="title">
-                <h1>Bem vindo ao Aprende <span class="A">A</span><span class="B">B</span><span class="C">C</span></h1>
+            <div class="header">
+                <div class="title">
+                    <h1>Bem vindo ao Aprende <span class="A">A</span><span class="B">B</span><span class="C">C</span></h1>
+                </div>
+                <div class="btn-modal info" id="info" onclick="abrirModal('janelaApresentation')">
+                    <span class="material-symbols-outlined infoBtn" data-modal-id="infoApresentation" id="info">
+                        info
+                    </span>
+                </div>
             </div>
             <div class="menu">
                 <div class="img" id="mascMasc">
@@ -95,6 +102,35 @@
                 </main>
             </div>
         
+        </div>
+    </div>
+
+    <div id="janelaApresentation" class="janelaApresentation janelaModal">
+        <div id="modal" class="modal modalApresent">
+            <div class="top-modal">
+                <button class="fechar" id="fechar">X</button>
+            </div>
+            <div class="modalContent">
+                <div id="professorFala">
+                    
+                </div>
+                <div>
+                    <img src="assets/imagens/professor.gif" alt="" height="200px">
+                </div>
+                <div class="buttonsArrow">
+                    <button class="btnArrow">
+                        <span class="material-symbols-outlined btnF back" id="btnBack">
+                            arrow_back
+                        </span>
+                    </button>
+                    <button class="btnArrow">
+                        <span class="material-symbols-outlined btnF next" id="btnNext">
+                        arrow_forward
+                        </span>
+                    </button>
+                </div>
+            </div>
+            
         </div>
     </div>
 

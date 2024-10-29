@@ -21,7 +21,7 @@ function abrirModal(modalId) {
     
     //Evento para fechar o modal e parar a música
     modal.addEventListener('click', (status) => {
-        if (status.target.id === 'fechar' || status.target.id === 'janelaModal') {
+        if (status.target.id === 'fechar' || status.target.id === 'janelaModal' || status.target.id === 'janelaApresentation' || status.target.id === 'janelaModal02') {
             modal.classList.remove('abrir');
             stopMusic(); // Para a música ao fechar o modal
         }
@@ -52,3 +52,43 @@ function stopMusic() {
         musicMain.currentTime = 0; // Reseta a música para o início
     }
 }
+
+//Abrir modal de apresentação e conteúdos do modal
+
+window.onload = () => {
+    setTimeout(abrirApresentação, 1000);
+}
+function abrirApresentação(){
+    const modalApr = document.getElementById('janelaApresentation');
+    modalApr.classList.add('abrir');
+    modalApr.addEventListener('click', (element) => {
+        if(element.target.id === 'fechar' || element.target.id === 'janelaApresentation'){
+            modalApr.classList.remove('abrir');
+        }
+    })
+}
+
+const falasProfessor = ['<p>Olá, eu sou o seu professor aqui nesse mundo!</p>', 'Irei falar um pouco como as coisas funcionam aqui. No botão gigante e vermelho que você verá, ou já viu, quando clicar nele começará a nossa bricadeira!', ]
+let indiceFala = 0;
+let btnFala = [...document.getElementsByClassName('btnF')];
+
+var fala = document.getElementById('professorFala')
+fala.innerHTML = falasProfessor[indiceFala]
+
+btnFala.map((el) => {
+    el.addEventListener('click', (button) => {
+        console.log(button.target.id)
+        fala.style.animation = 'texto .7s ease-in-out';
+        if(button.target.id === 'btnNext' && indiceFala < falasProfessor.length){
+            indiceFala+=1;
+            fala.innerHTML = falasProfessor[indiceFala]
+        }
+        else if(button.target.id === 'btnBack' && indiceFala > 0){
+            indiceFala-=1;
+            fala.innerHTML = falasProfessor[indiceFala]
+        }
+    })
+})
+
+
+
