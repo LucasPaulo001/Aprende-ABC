@@ -139,9 +139,18 @@
     gap: 30px;
 }
 #professorFala{
-    width: 50%;
+    width: 75%;
+    height: 45%;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; 
 }
+/* #professorFala > #professorFalaImg > img{
+    height: 88%;
+    width: 70%;
+} */
 
 @keyframes texto {
     from{
@@ -215,10 +224,10 @@
         font-size: 6vw;
     }
     .janelaModal{
-        height: auto;
+        height: 150vh;
     }
     .janelaApresentation{
-        height: 100vh;
+        height: 150vh;
     }
     .header{
         flex-direction: column-reverse;

@@ -56,7 +56,18 @@ function stopMusic() {
 //Abrir modal de apresentação e conteúdos do modal
 
 window.onload = () => {
-    setTimeout(abrirApresentação, 1000);
+    let janelaAberta = localStorage.getItem('Status da Janela');
+
+    if(!janelaAberta){
+        localStorage.setItem('Status da Janela', '1');
+
+        setTimeout(abrirApresentação, 1000);
+    }
+    else {
+        console.log('janela aberta')
+    }
+    console.log(janelaAberta)
+    
 }
 function abrirApresentação(){
     const modalApr = document.getElementById('janelaApresentation');
@@ -68,27 +79,48 @@ function abrirApresentação(){
     })
 }
 
-const falasProfessor = ['<p>Olá, eu sou o seu professor aqui nesse mundo!</p>', 'Irei falar um pouco como as coisas funcionam aqui. No botão gigante e vermelho que você verá, ou já viu, quando clicar nele começará a nossa bricadeira!', ]
+const falasProfessor = [
+    '<p>Olá, eu sou o seu professor aqui nesse mundo!</p>', 
+    '<p>Irei falar um pouco como as coisas funcionam aqui. No botão gigante e vermelho que você verá, ou já viu, quando clicar nele começará a nossa brincadeira!</p>', 
+    '<p>Você terá dois tipos de cards, uns para jogar e claro, treinar seus conhecimentos e outros para aprender</p>',
+    '<p>Você também pode comprar personagens com diferentes habilidades, cada um pode te ajudar de uma forma diferente: Falar dicas em voz alta, destacar e explicar coisas, etc.</p>',
+    '<h2>Agora vamos lá! te vejo por aí.</2>'
+];
+
+const imgs = ['assets/imagens/imgs-tutorial/capelo.png', 'assets/imagens/imgs-tutorial/excl.png', 'assets/imagens/imgs-tutorial/explicacao01.png', 'assets/imagens/imgs-tutorial/persons.gif', 'assets/imagens/imgs-tutorial/feliz.png'];
 let indiceFala = 0;
 let btnFala = [...document.getElementsByClassName('btnF')];
 
-var fala = document.getElementById('professorFala')
-fala.innerHTML = falasProfessor[indiceFala]
+const fala = document.getElementById('professorFalaTexto'); // Div para o texto
+const imgContainer = document.getElementById('professorFalaImg'); // Div para a imagem
+
+// Definindo a primeira fala e imagem
+fala.innerHTML = falasProfessor[indiceFala];
+let localImg = document.createElement('img'); 
+imgContainer.appendChild(localImg); // Adiciona a imagem ao container
 
 btnFala.map((el) => {
     el.addEventListener('click', (button) => {
-        console.log(button.target.id)
         fala.style.animation = 'texto .7s ease-in-out';
-        if(button.target.id === 'btnNext' && indiceFala < falasProfessor.length){
-            indiceFala+=1;
-            fala.innerHTML = falasProfessor[indiceFala]
+        
+        // Verifica o botão e atualiza o índice
+        if(button.target.id === 'btnNext' && indiceFala < falasProfessor.length - 1){
+            indiceFala += 1;
+            localImg.src = imgs[indiceFala];
+            
         }
         else if(button.target.id === 'btnBack' && indiceFala > 0){
-            indiceFala-=1;
-            fala.innerHTML = falasProfessor[indiceFala]
+            indiceFala -= 1;
+            localImg.src = imgs[indiceFala];
         }
-    })
-})
+
+        // Atualiza o texto e a imagem
+        fala.innerHTML = falasProfessor[indiceFala];
+        localImg.style.height = '100%';
+        localImg.style.width = '100%';
+        //localImg.src = imgs[indiceFala];
+    });
+});
 
 
 

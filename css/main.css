@@ -471,5 +471,8 @@ footer{
     .content-game{
         border-bottom: 2px solid;
     }
+    .modalContent{
+        height: 57%;
+    }
     
 }
