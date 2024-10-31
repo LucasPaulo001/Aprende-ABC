@@ -8,8 +8,6 @@ let dicaPersonSabichao = ['Sabia que a primeira bola de futebol era feita de cou
 
 let images = ['assets/imagens/obj_imagens/bola.png', 'assets/imagens/obj_imagens/gato.png', 'assets/imagens/obj_imagens/cachorro.png', 'assets/imagens/obj_imagens/carro.png', 'assets/imagens/obj_imagens/livro.png', 'assets/imagens/obj_imagens/sol.png', 'assets/imagens/obj_imagens/casa.png'];
 
-
-
 let indiceAtual = 0;
 let cont = 0;
 let resp = [];
@@ -18,7 +16,10 @@ let dicaSabichao = document.getElementById('dicaPerson')
 //let dicaFem = document.getElementById('dicaFem');
 let letrasContainer = document.getElementById('resp');
 const coin = document.getElementById('coin');
-let score = 9999;
+coin.innerHTML = localStorage.getItem('score');
+let score = Number(localStorage.getItem('score'))||0;
+let cashMenu = document.getElementById('coins');
+cashMenu.innerHTML = Number(localStorage.getItem('score'))||0;
 
 //Inserção da imagem do objeto
 let icon = document.getElementById('icon');
@@ -167,11 +168,9 @@ function enter() {
         musicFail.play();
     }
     localStorage.setItem('score', score);
+    document.getElementById('coins').innerHTML = localStorage.getItem('score');
+    document.getElementById('coinsEx').innerHTML = localStorage.getItem('score');
 }
-//Informando o número de moedas no menu de cards
-let cashMenu = document.getElementById('coins');
-cashMenu.innerHTML = 9999//localStorage.getItem('score');
-
 
 //A função de limpar volta para o estado inical do jogo no que diz respeito as respostas
 function limpar(){

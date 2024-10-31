@@ -208,6 +208,14 @@
 
             <!-- Modal -->
             <div id="janelaModal02" class="janelaModal">
+                <div class="coinsContent">
+                    <div class="img-coin">
+                        <img src="assets/imagens/coin.png" alt="" height="60px">
+                    </div>
+                    <div id="coinsEx">
+
+                    </div>
+                </div>
                 <div id="modal" class="modal">
                     <div class="top-modal">
                         <button id="fechar">X</button>
@@ -215,9 +223,10 @@
                     </div>
                     <div class="modal-body">
                         <div class="game-content">
+                            <p>Toque nas letras para saber seu som</p>
                             <div id="letras">
                                 <h1>Vogais</h1>
-                                <p>Toque nas letras para saber seu som</p>
+
                                 <div class="campoLetras">
                                     <button class="letra vogal" data-som="assets/audio_letras/A.mp3">A</button>
                                     <button class="letra vogal" data-som="assets/audio_letras/E.mp3">E</button>
@@ -225,6 +234,25 @@
                                     <button class="letra vogal" data-som="assets/audio_letras/O.mp3">O</button>
                                     <button class="letra vogal" data-som="assets/audio_letras/U.mp3">U</button>
                                 </div>
+                                <div class="professor">
+                                    <div class="explic">
+                                        <p>As vogais são letras muito especiais no alfabeto! Elas são cinco: A, E, I, O
+                                            e U. Essas letras aparecem em quase todas as palavras e ajudam a dar som e
+                                            vida a</p>
+
+                                        <p>Sem as vogais, muitas palavras ficariam difíceis de ler ou não teriam som.
+                                            Por exemplo, em "casa", as letras A e A fazem a palavra ficar completa e
+                                            bonita de falar. Podemos pensar nas vogais como uma "pontinha de som" que
+                                            une as outras letras (as consoantes) para formar palavras.</p>
+                                    </div>
+                                    <div class="imgProf">
+                                        <img src="assets/imagens/professor.gif" alt="" height="300px">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="separator">
+
                             </div>
                             <div id="letrasConsoantes">
                                 <h1>Consoantes</h1>
@@ -235,6 +263,7 @@
                                     <button class="letra  consoate" data-som="assets/audio_letras/F.mp3">F</button>
                                     <button class="letra  consoate" data-som="assets/audio_letras/G.mp3">G</button>
                                     <button class="letra  consoate" data-som="assets/audio_letras/H.mp3">H</button>
+                                    <button class="letra  consoate" data-som="assets/audio_letras/J.mp3">J</button>
                                     <button class="letra consoate" data-som="assets/audio_letras/K.mp3">K</button>
                                     <button class="letra vogal" data-som="assets/audio_letras/L.mp3">L</button>
                                     <button class="letra vogal" data-som="assets/audio_letras/M.mp3">M</button>
@@ -249,17 +278,101 @@
                                     <button class="letra vogal" data-som="assets/audio_letras/Y.mp3">Y</button>
                                     <button class="letra vogal" data-som="assets/audio_letras/Z.mp3">Z</button>
                                 </div>
+                                <div class="professor">
+                                    <div class="explic">
+                                        <p>As consoantes são as outras letras do alfabeto que, junto com as vogais,
+                                            formam todas as palavras que conhecemos! São 21 consoantes: B, C, D, F, G,
+                                            H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y e Z.</p>
+                                        <p>Diferente das vogais, as consoantes precisam das vogais para formar sílabas e
+                                            palavras. Por exemplo, para dizer "bola", as consoantes B, L e a vogal O se
+                                            juntam para formar o som completo. Cada consoante tem seu som e jeito de
+                                            falar, e com elas conseguimos criar muitas combinações de palavras!</p>
+                                    </div>
+                                    <div class="imgProf">
+                                        <img src="assets/imagens/professor.gif" alt="" height="300px">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="traine">
+                                <div class="titleQ">
+                                    <h2>Exercício</h2>
+                                </div>
+
+                                <div class="traine-content">
+                                    <div class="imgObj">
+                                        <img src="assets/imagens/imags-exercicios/elefante.png" alt="" height="150px">
+                                        <span>
+                                            <h3>Elefante</h3>
+                                        </span>
+                                    </div>
+
+                                    <div>
+                                        <div class="questions">
+                                            <div>
+
+                                                <p>Quais são as vogais da palavra "Elefante"?</p>
+                                                <button class="letra ex" data-letra="E">E</button>
+                                                <button class="letra ex" data-letra="L">L</button>
+                                                <button class="letra ex" data-letra="E">E</button>
+                                                <button class="letra ex" data-letra="F">F</button>
+                                                <button class="letra ex" data-letra="A">A</button>
+                                                <button class="letra ex" data-letra="N">N</button>
+                                                <button class="letra ex" data-letra="T">T</button>
+                                                <button class="letra ex" data-letra="E">E</button>
+                                                <div class="feedback" id="feedback">
+                                                    <span class="digit d1">
+                                                        <p>.</p>
+                                                    </span>
+                                                    <span class="digit d2">
+                                                        <p>.</p>
+                                                    </span>
+                                                    <span class="digit d3">
+                                                        <p>.</p>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <img src="assets/imagens/imags-exercicios/cachorro.png" alt="" height="150px">
+                                                    </div>
+                                                    <p>Quais são as consoantes da palavra "Cachorro"?</p>
+                                                    <button class="letra q2" data-letra="C">C</button>
+                                                    <button class="letra q2" data-letra="A">A</button>
+                                                    <button class="letra q2" data-letra="C">C</button>
+                                                    <button class="letra q2" data-letra="H">H</button>
+                                                    <button class="letra q2" data-letra="O">O</button>
+                                                    <button class="letra q2" data-letra="R">R</button>
+                                                    <button class="letra q2" data-letra="R">R</button>
+                                                    <button class="letra q2" data-letra="O">O</button>
+                                                </div>
+                                                <div class="feedback" id="feedbackq2">
+                                                    <span class="digit d1">
+                                                        <p>.</p>
+                                                    </span>
+                                                    <span class="digit d2">
+                                                        <p>.</p>
+                                                    </span>
+                                                    <span class="digit d3">
+                                                        <p>.</p>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
     </main>
     <script src="js/openModais.js"></script>
     <script src="js/main.js"></script>
     <script src="js/card2.js"></script>
+    <script src="js/exerc.js"></script>
 
 
 </body>

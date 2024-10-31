@@ -104,9 +104,10 @@
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
+    font-family: var(--fonte-principal);
 }
 #situation, #situation2{
-    background-color: red;
+    background-color: #4CAF50;
     padding: 10px;
     border-radius: 10px;
 }
@@ -200,6 +201,124 @@
 .btnArrow:hover .next{
     animation: animationNext .3s;
 }
+.game-content > p{
+    text-align: center;
+    font-family: var(--fonte-principal);
+    font-size: 2vw;
+}
+.professor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid white;
+    padding: 10px;
+    background-color: #6c6c6c45;
+    border-radius: 10px;
+    text-indent: 15px;
+}
+.imgProf{
+    background-color: #000000ad;
+    border-left: 4px solid #ffffffb8;
+    border-radius: 10px;
+}
+.explic{
+    font-size: 2vw;
+}
+.separator{
+    height: 50px;
+    background-color: #ffffff3d;
+    margin-top: 50px;
+}
+.traine{
+    /* height: 300px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fonte-principal);
+    font-size: 2vw;
+    text-align: center;
+}
+.titleQ{
+    background-color: rgba(0, 0, 0, 0.411);
+    width: 100%;
+    margin: 10px;
+    height: 10%;
+    animation: titleAnim infinite 2s;
+}
+.titleQ > h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vw;
+}
+.traine-content{
+    width: 100%;
+    position: relative;
+}
+.coinsContent{
+    top: 0;
+    position: fixed;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37%;
+    z-index: 99999;
+    opacity: .3;
+    font-family: var(--fonte-principal);
+    font-size: 20px;
+}
+.coinsContent:hover{
+    opacity: 1;
+}
+.img-coin, .img-coin>img{
+    animation: coin ease-in-out infinite 2s;
+}
+.d1{
+    animation: coin ease-in-out infinite 1s;
+}
+.d2{
+    animation: coin ease-in-out infinite 1.5s;
+}
+.d3{
+    animation: coin ease-in-out infinite 2s;
+}
+.feedback{
+    display: flex;
+    justify-content: center;
+}
+.valorDisponivel{
+    position: sticky;
+    top: 0;
+    background-color: #000000cb;
+    width: 100vw;
+    opacity: .4;
+}
+.valorDisponivel:hover{
+    opacity: 1;
+}
+@keyframes coin {
+    0%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(0, 20px, 0);
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes titleAnim {
+    from{
+        background-color: rgba(0, 0, 0, 0.082);
+        transition: 2s;
+    }
+    to{
+        background-color: rgba(0, 0, 0, 0.411);
+        transition: 2s;
+    }
+}
 @keyframes animationBack {
     from{
         transform: translate3d(20px, 0, 0);
@@ -220,6 +339,9 @@
     #letras, #value, #local-coins, #score{
         font-size: 6vw;
     }
+    .game-content > p{
+        font-size: 6vw;
+    }
     #value{
         font-size: 6vw;
     }
@@ -236,6 +358,21 @@
     #professorFala{
         width: 100%;
         flex-direction: column;
+    }
+    .professor{
+        flex-direction: column;
+        
+    }
+    .explic{
+        font-size: 4vw;
+    }
+    .imgProf{
+        height: 119px;
+        border: none;
+        border-top: 3px solid white;
+    }
+    .imgProf > img{
+        height: 100%;
     }
 }
 

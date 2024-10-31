@@ -2,10 +2,11 @@ const buy = document.getElementById('buy');
 const value = 1; // O valor do mascote
 let mascoteMasc = document.getElementById('mascMasc');
 let mascoteFem = document.getElementById('mascFem');
-let valorDisponivel = 9999; // Você pode pegar isso do localStorage mais tarde
-let scoreV = document.getElementById('scoreCamp'); // Corrigido para pegar o elemento correto
+let valorDisponivel = localStorage.getItem('score')||0;
+let scoreV = document.getElementById('scoreCamp'); 
 let situationBuy = document.getElementById('situation');
 let situationBuy2 = document.getElementById('situation2');
+
 
 // Inicializa o mascote do localStorage, ou um padrão
 let person01 = localStorage.getItem('personagemLocal01') || 'assets/imagens/mascote(masc).png';
@@ -41,7 +42,12 @@ if (situation === 'Não Possui') {
 // Adiciona os eventos de clique para os botões de personagem fora da função LocalPersonagem
 document.getElementById('btn-person-local01').addEventListener('click', () => {
     if (valorDisponivel >= value) {
-        valorDisponivel -= value; // Reduz o valor da compra
+        if(localStorage.getItem('SituaçãoPersonagem01') == 'comprado!'){
+            valorDisponivel-=0;
+        }
+        else{
+            valorDisponivel -= value; // Reduz o valor da compra
+        }
         person01 = 'assets/imagens/giphy.gif'; // Novo mascote
         localStorage.setItem('personagemLocal01', person01);
         newMascote.src = person01; // Atualiza a imagem exibida
@@ -59,7 +65,12 @@ document.getElementById('btn-person-local01').addEventListener('click', () => {
 
 document.getElementById('btn-person-local02').addEventListener('click', () => {
     if (valorDisponivel >= value) {
-        valorDisponivel -= value; // Reduz o valor da compra
+        if(localStorage.getItem('SituaçãoPersonagem02') == 'comprado!'){
+            valorDisponivel -= 0; 
+        }
+        else{
+            valorDisponivel -= value; // Reduz o valor da compra
+        }
         person02 = 'assets/imagens/person_2.gif'; // Novo mascote
         localStorage.setItem('personagemLocal02', person02);
         newMascote2.src = person02; // Atualiza a imagem exibida
