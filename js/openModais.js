@@ -21,7 +21,7 @@ function abrirModal(modalId) {
     
     //Evento para fechar o modal e parar a música
     modal.addEventListener('click', (status) => {
-        if (status.target.id === 'fechar' || status.target.id === 'janelaModal' || status.target.id === 'janelaApresentation' || status.target.id === 'janelaModal02') {
+        if (status.target.id === 'fechar' || status.target.id === 'janelaApresentation' || status.target.id === 'janelaModal02') {
             modal.classList.remove('abrir');
             stopMusic(); // Para a música ao fechar o modal
         }

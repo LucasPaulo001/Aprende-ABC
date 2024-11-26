@@ -195,6 +195,7 @@
     width: 50%;
     justify-content: space-around;
 }
+
 .btnArrow:hover .back{
     animation: animationBack .3s;
 }
