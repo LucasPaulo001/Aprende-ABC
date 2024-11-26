@@ -21,7 +21,7 @@
     </div>
     <main class="content-games">
 
-        <div class="card01">
+        <div class="card01 card">
             <div class="img-top-card">
                 <img src="assets/imagens/img-card01.jpg" alt="" height="200px">
             </div>
@@ -36,7 +36,7 @@
 
 
             <!-- Modal -->
-            <div id="janelaModal" class="janelaModal">
+            <div id="janelaModal" class="">
                 <div id="modal" class="modal">
                     <div class="top-modal">
                         <button id="fechar">X</button>
@@ -193,7 +193,7 @@
             </div>
         </div>
         </div>
-        <div class="card02">
+        <div class="card02 card">
             <div class="img-top-card">
                 <img src="assets/imagens/top-card2.jpg" alt="" height="200px" width="100%">
             </div>
@@ -207,7 +207,7 @@
             </div>
 
             <!-- Modal -->
-            <div id="janelaModal02" class="janelaModal">
+            <div id="janelaModal02" class="">
                 <div class="coinsContent">
                     <div class="img-coin">
                         <img src="assets/imagens/coin.png" alt="" height="60px">
@@ -332,7 +332,8 @@
                                                 </div>
                                                 <div>
                                                     <div>
-                                                        <img src="assets/imagens/imags-exercicios/cachorro.png" alt="" height="150px">
+                                                        <img src="assets/imagens/imags-exercicios/cachorro.png" alt=""
+                                                            height="150px">
                                                     </div>
                                                     <p>Quais são as consoantes da palavra "Cachorro"?</p>
                                                     <button class="letra q2" data-letra="C">C</button>
@@ -357,9 +358,6 @@
                                                 </div>
 
                                             </div>
-
-
-                                            
                                         </div>
                                     </div>
                                 </div>
@@ -367,7 +365,20 @@
                         </div>
                     </div>
                 </div>
-
+            </div>   
+        </div>
+        <div class="card03 card">
+            <div class="img-top-card">
+                <img src="assets/imagens/card03.jpeg" alt="" height="200px">
+            </div>
+            <div class="txt-card">
+                <p>Desafio das Sílabas</p>
+            </div>
+            <!-- Botão para acionar modal -->
+            <div class="local-btn">
+                 <div onclick="abrirModal('janelaModal')" data-modal-id="modal01" id="open-game" class="btn-modal"> 
+                    Jogar</div>
+            </div>     
     </main>
     <script src="js/openModais.js"></script>
     <script src="js/main.js"></script>
