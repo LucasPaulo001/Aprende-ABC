@@ -3,7 +3,7 @@
 }
 .caracter{
     width: 100%;
-    max-height: 300px;
+    max-height: 400px;
     height: 100%;
     padding: 10px;
 }
@@ -16,4 +16,8 @@
 }
 .caracter img{
     height: 85%;
+}
+.caracter .valor{
+    color: yellow;
+    font-size: 2vw;
 }
