@@ -31,12 +31,16 @@ const lojaPersons = [
         nome: "Saltito",
         imagem: "assets/imagens/giphy.gif",
         habilidade: "Fala a dica em voz alta se interagir com ele",
+        id: 0,
+        comprado: false,
         preco: 10
     },
     {
         nome: "Sabichão",
         imagem: "assets/imagens/person_2.gif",
         habilidade: "Fala curiosidades sobre objetos",
+        id: 1,
+        comprado: false,
         preco: 20
     },
 ]
@@ -72,20 +76,22 @@ function localLoja(){
         preco.setAttribute('class', 'valor')
         preco.textContent = `Preço: ${elements.preco} moedas`;
 
-        //botão de compra
-        const localBtn = document.createElement('div')
+        //Botão de comprar
         const btnBuy = document.createElement('button')
-        btnBuy.setAttribute('class', 'buy')
-        btnBuy.setAttribute('id', `btn${index}`)
+        btnBuy.setAttribute('class', 'buy buyPerson')
         btnBuy.textContent = 'Comprar'
-        localBtn.appendChild(btnBuy)
+
+        //Funcionalidade do botão de compra
+        btnBuy.addEventListener('click', () => { 
+            comprarPersonagem(elements, index)
+        })
 
         // Adiciona tudo ao card
         caracter.appendChild(nome);
         caracter.appendChild(localImagem);
         caracter.appendChild(habilidade);
         caracter.appendChild(preco);
-        caracter.appendChild(localBtn)
+        caracter.appendChild(btnBuy)
         card.appendChild(caracter)
 
         // Adiciona o card à loja
@@ -93,19 +99,88 @@ function localLoja(){
 
     })
 }
-
-//Funcionalidade de comprar o personagem
-let buttonsBuy = [...document.getElementsByClassName('buy')]
-buttonsBuy.forEach((buttom) => {
-    buttom.addEventListener('click', (btn) => {
-        if(btn.target.id === 'btn0'){
-            console.log('comprou o personagem "Saltito"')
+let coins = document.getElementById('coins')
+//enviando a quantidade de moedas do localStorage para a tela do usuário na loja
+coins.innerHTML = `Você possui ${Number(localStorage.getItem('score'))} moedas`
+//Recebendo o valor no localStorage
+let processBuy = Number(localStorage.getItem('score'))
+//Função para comprar personagem
+function comprarPersonagem(elements, index){
+    if(index == elements.id && processBuy >= elements.preco){
+        console.log('Você comprou o personagem ' + elements.nome)
+        processBuy=processBuy-elements.preco
+        localStorage.setItem('score', processBuy)
+        coins.innerHTML = `Você possui ${Number(localStorage.getItem('score'))} moedas`
+        console.log(elements.comprado)
+        if(index = 0 && elements.comprado == false){
+            elements.comprado = true
         }
-        if(btn.target.id === 'btn1'){
-            console.log('comprou o personagem "Sabichão"')
+        if(index = 1 && elements.comprado == false){
+            elements.comprado = true
         }
-    })
-})
+        console.log(processBuy)
+    }
+    else{
+        console.log('Você não tem moedas suficientes')
+    }
+    console.log(typeof(processBuy))
+}
 
 
-console.log(buttonsBuy)
+
+
+
+
+
+
+
+
+
+
+
+// // Adiciona os eventos de clique para os botões de personagem fora da função LocalPersonagem
+// document.getElementById('btn-person-local01').addEventListener('click', () => {
+//     if (valorDisponivel >= value) {
+//         if(localStorage.getItem('SituaçãoPersonagem01') == 'comprado!'){
+//             valorDisponivel-=0;
+//         }
+//         else{
+//             valorDisponivel -= value; // Reduz o valor da compra
+//         }
+//         person01 = 'assets/imagens/giphy.gif'; // Novo mascote
+//         localStorage.setItem('personagemLocal01', person01);
+//         newMascote.src = person01; // Atualiza a imagem exibida
+//         newMascote.height = 300; // Altera a altura da nova imagem
+
+//         // Atualiza o valor disponível e a situação do personagem
+//         localStorage.setItem('score', valorDisponivel);
+//         scoreV.innerHTML = valorDisponivel;
+//         localStorage.setItem('SituaçãoPersonagem01', 'comprado!');
+//         situationBuy.innerHTML = 'comprado!';
+//     } else {
+//         alert("Você não tem moedas suficientes!");
+//     }
+// });
+
+// document.getElementById('btn-person-local02').addEventListener('click', () => {
+//     if (valorDisponivel >= value) {
+//         if(localStorage.getItem('SituaçãoPersonagem02') == 'comprado!'){
+//             valorDisponivel -= 0; 
+//         }
+//         else{
+//             valorDisponivel -= value; // Reduz o valor da compra
+//         }
+//         person02 = 'assets/imagens/person_2.gif'; // Novo mascote
+//         localStorage.setItem('personagemLocal02', person02);
+//         newMascote2.src = person02; // Atualiza a imagem exibida
+//         newMascote2.height = 300; // Altera a altura da nova imagem
+
+//         // Atualiza o valor disponível e a situação do personagem
+//         localStorage.setItem('score', valorDisponivel);
+//         scoreV.innerHTML = valorDisponivel;
+//         localStorage.setItem('SituaçãoPersonagem02', 'comprado!');
+//         situationBuy2.innerHTML = 'comprado!';
+//     } else {
+//         alert("Você não tem moedas suficientes!");
+//     }
+// });

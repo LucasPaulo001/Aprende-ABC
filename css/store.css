@@ -3,7 +3,6 @@
 }
 .caracter{
     width: 100%;
-    max-height: 400px;
     height: 100%;
     padding: 10px;
 }
@@ -17,7 +16,72 @@
 .caracter img{
     height: 85%;
 }
-.caracter .valor{
-    color: yellow;
-    font-size: 2vw;
+.top-modal h2{
+    text-align: center;
+}
+
+/*Configurações tela inicial*/
+.janelaConf{
+    position: fixed;
+    height: 0;
+    width: 100vw;
+    overflow: hidden;
+    visibility: hidden;
+    background-color: #000000ba;
+    color: white;
+    backdrop-filter: blur(5px);
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s cubic-bezier(0.42, 0, 0, 2.39);
+}
+.janelaConf.ativeSettings{
+    height: 100vh;
+    overflow: visible;
+    visibility: visible;
+    width: 100vw;
+}
+.settings{
+    height: 50%;
+    display: flex;
+    background-color: var(--primeira-color);
+    border-radius: 10px;
+    width: 90%;
+    border: 3px solid var(--quarta-color);
+}
+.timeBar{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.timeBar label{
+    display: flex;
+    gap: 15px;
+    font-family: var(--fonte-principal);
+    font-size: 3vw;
+}
+.btnAdd{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-family: var(--fonte-principal);
+    color: rgb(62, 240, 62);
+}
+.btnAdd button{
+    height: 25px;
+    border-radius: 5px;
+    color: white;
+    font-size: var(--fonte-principal);
+    background-color: var(--quarta-color);
+    cursor: pointer;
+    border: 1px solid white;
+}
+#timer{
+    font-family: var(--fonte-principal);
+    
+}
+#time{
+    text-indent: 10px;
 }

@@ -93,14 +93,6 @@ function limpaCuriosidade(){
 }
 var musicMain = null;
 
-// Adiciona o evento para o botão com ID "open-game" ou "play"
-/*let playMusic = document.getElementById('open-game');
-playMusic.addEventListener('click', (element) => {
-    if (element.target.id === 'open-game' || element.target.id === 'play') {
-        play(); // Chama a função para tocar a música
-    }
-});*/
-
 function play() {
     if (!musicMain) {
         musicMain = new Audio('assets/audio/music_main.mp3');

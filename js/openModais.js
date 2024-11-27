@@ -122,5 +122,16 @@ btnFala.map((el) => {
     });
 });
 
+//Funcionalidade para abrir janela de configurações
+const janelaSettings = document.getElementById('janelaConf')
+function openSettings(){
+    janelaSettings.classList.add('ativeSettings')
+}
+janelaSettings.addEventListener('click', (element) => {
+    if(element.target.id === 'janelaConf'){
+        janelaSettings.classList.remove('ativeSettings')
+    }
+})
+
 
 

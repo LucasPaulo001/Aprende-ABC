@@ -216,6 +216,8 @@ footer{
     transition: .5s;
 }
 #info#info{   
+    display: flex;
+    justify-content: space-around;
     background-color: transparent;
     color: white;
     font-size: 25px;
