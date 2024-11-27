@@ -18,11 +18,15 @@
                 <div class="title">
                     <h1>Bem vindo ao Aprende <span class="A">A</span><span class="B">B</span><span class="C">C</span></h1>
                 </div>
-                <div class="btn-modal info" id="info" onclick="abrirModal('janelaApresentation')">
-                    <span class="material-symbols-outlined infoBtn" data-modal-id="infoApresentation" id="info">
+                <div class="btn-modal info" id="info">
+                    <span class="material-symbols-outlined infoBtn" onclick="abrirModal('janelaApresentation')" data-modal-id="infoApresentation" id="info">
                         info
                     </span>
+                    <span class="material-symbols-outlined" onclick="openSettings()">
+                        settings
+                    </span>
                 </div>
+                
             </div>
             <div class="menu">
                 <div class="img" id="mascMasc">
@@ -42,19 +46,19 @@
                 </div>
             </div>
             <div class="local-btn">
-                <div onclick="abrirModal('janelaModal')" class="btn-modal" id="modalPersons">Personagens</div>
+                <div onclick="abrirModal('janelaModal')"  class="btn-modal" id="modalPersons">Personagens</div>
             </div>
         </section>
         <footer>
             Desenvolvido por Lucas Paulo &copy; 2024
         </footer>
     </main>
-    <!-- Modal -->
+    <!-- Modal da loja de personagens-->
     <div id="janelaModal" class="janelaModal">
         <div id="modal" class="modal">
             <div class="top-modal">
                 <button class="fechar" id="fechar">X</button>
-                <h2>Personagens</h2>
+                <h2>Personagens <br><span id="coins"></span></h2>
                 
             </div>
             <hr>
@@ -64,7 +68,7 @@
         
         </div>
     </div>
-
+    <!-- Modal de apresentação -->
     <div id="janelaApresentation" class="janelaApresentation janelaModal">
         <div id="modal" class="modal modalApresent">
             <div class="top-modal">
@@ -96,14 +100,28 @@
                     </button>
                 </div>
             </div>
-            
         </div>
     </div>
+    <!-- Modal de configurações -->
+     <div class="janelaConf" id="janelaConf">
+        <div class="settings">
+            <div class="timeBar">
+                <label for="time">
+                    <span>Tempo para as jogadas</span><input type="number" placeholder="5-60s" name="time" id="time" min="5" max="60">
+                </label>
+                <div class="btnAdd" onclick="addTimer()">
+                    <button>ADD</button> <span id="statusAdd"></span>
+                </div>
+            </div>
+            
+        </div>
+     </div>
 
 
     <script src="js/openModais.js"></script>
     <script src="js/main.js"></script>
     <script src="js/buyPerson.js"></script>
+    <script src="js/functionSettings.js"></script>
     
     
 </body>
