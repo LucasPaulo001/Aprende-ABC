@@ -135,6 +135,7 @@ footer{
     background-color: #00000082;
     width: 100vw;
     height: 0;
+    left: 0;
     top: 0;
     display: flex;
     overflow: hidden;
@@ -150,6 +151,7 @@ footer{
     height: 100vh;
     overflow: visible;
     visibility: visible;
+    z-index: 9;
 }
 /*Animação de abertura*/
 .abrir .modal{
