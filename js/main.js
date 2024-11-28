@@ -93,14 +93,6 @@ function limpaCuriosidade(){
 }
 var musicMain = null;
 
-// Adiciona o evento para o botão com ID "open-game" ou "play"
-/*let playMusic = document.getElementById('open-game');
-playMusic.addEventListener('click', (element) => {
-    if (element.target.id === 'open-game' || element.target.id === 'play') {
-        play(); // Chama a função para tocar a música
-    }
-});*/
-
 function play() {
     if (!musicMain) {
         musicMain = new Audio('assets/audio/music_main.mp3');
@@ -135,7 +127,13 @@ function insert(digit) {
 function enter() {
     let palavraAtual = palavras[indiceAtual]; // Pega a palavra atual
     let correta = true;
-    
+
+    // Verifica se o jogo está pausado (ou seja, o tempo acabou)
+    if (Timer(valorTime)()) { 
+        alert("O jogo está pausado. Reinicie o cronômetro.");
+        return;
+    }
+
     // Verifica se todas as letras estão corretas
     for (let i = 0; i < palavraAtual.length; i++) {
         if (resp[i].innerHTML.trim() === palavraAtual[i]) {
@@ -154,23 +152,44 @@ function enter() {
         dicaMasc.innerHTML = palavraAtual + ' é a palavra correta! Está indo muito bem!';
         dicaSabichao.innerHTML = curiosidade;
         indiceAtual++; // Avança para a próxima palavra
-        setTimeout(mostrarProximaPalavra, 5000); // Exibe a próxima palavra após 2 segundos
-        score+=1;
+        setTimeout(mostrarProximaPalavra, 5000); // Exibe a próxima palavra após 5 segundos
+        score += 1;
         coin.innerHTML = `${score}`;
     }
-    //Se a palavra ou letra estiver icorreta ativará esse som
-    if (!correta){
-        if(coin>=1){
-            score-=1;
+
+    // Se a palavra ou letra estiver incorreta
+    if (!correta) {
+        if (score >= 1) {
+            score -= 1;
             coin.innerHTML = `${score}`;
         }
         let musicFail = new Audio('assets/audio/fail.mp3');
         musicFail.play();
     }
+
+    // Atualiza o score no localStorage
     localStorage.setItem('score', score);
     document.getElementById('coins').innerHTML = localStorage.getItem('score');
     document.getElementById('coinsEx').innerHTML = localStorage.getItem('score');
 }
+
+
+
+
+// function restartTimerInGame(){
+    // let enterBtn = document.getElementById('enter')
+    // enterBtn.addEventListener('click', () => {
+    //     if(cont == true){
+    //         let value = localStorage.getItem('ValorTempo')
+    //         document.getElementById('timer').innerHTML = value
+    //         LocalTimer.style.color = 'white'
+    //         clearInterval(timeLapse); // Para o cronômetro atual
+    //         recuperarTempo(); // Reseta o tempo para o valor inicial
+    //         Timer(value)
+    //     }
+        
+    // })
+// }
 
 //A função de limpar volta para o estado inical do jogo no que diz respeito as respostas
 function limpar(){

@@ -192,7 +192,7 @@ footer{
 #fechar{
     position: absolute;
     top: 3px;
-    right: 5px;
+    right: 50%;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -224,6 +224,8 @@ footer{
     transition: .5s;
 }
 #info#info{   
+    display: flex;
+    justify-content: space-around;
     background-color: transparent;
     color: white;
     font-size: 25px;
@@ -434,7 +436,7 @@ footer{
         font-size: 6vw;
     }
     .title{
-        font-size: 3rem;
+        font-size: 2rem;
         text-align: center;
     }
     a > .button{

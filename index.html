@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/card2.css">
+    <link rel="stylesheet" href="css/store.css">
 </head>
 
 <body>
@@ -17,11 +18,15 @@
                 <div class="title">
                     <h1>Bem vindo ao Aprende <span class="A">A</span><span class="B">B</span><span class="C">C</span></h1>
                 </div>
-                <div class="btn-modal info" id="info" onclick="abrirModal('janelaApresentation')">
-                    <span class="material-symbols-outlined infoBtn" data-modal-id="infoApresentation" id="info">
+                <div class="btn-modal info" id="info">
+                    <span class="material-symbols-outlined infoBtn" onclick="abrirModal('janelaApresentation')" data-modal-id="infoApresentation" id="info">
                         info
                     </span>
+                    <span class="material-symbols-outlined" onclick="openSettings()">
+                        settings
+                    </span>
                 </div>
+                
             </div>
             <div class="menu">
                 <div class="img" id="mascMasc">
@@ -41,71 +46,30 @@
                 </div>
             </div>
             <div class="local-btn">
-                <div onclick="abrirModal('janelaModal')" class="btn-modal" id="modalPersons">Personagens</div>
+                <div onclick="abrirModal('janelaModal')"  class="btn-modal" id="modalPersons">Personagens</div>
             </div>
         </section>
         <footer>
             Desenvolvido por Lucas Paulo &copy; 2024
         </footer>
     </main>
-    <!-- Modal dos personagens -->
-    <div id="janelaPersons" class="janelaPersons">
+    <!-- Modal da loja de personagens-->
+    <div id="janelaModal" class="janelaModal">
         <div id="modal" class="modal">
             <div class="top-modal">
                 <button class="fechar" id="fechar">X</button>
-                <h2>Personagens</h2>
+                <h2>Personagens <br><span id="coins"></span></h2>
+                
             </div>
             <hr>
-            <div class="modal-body">
-                <main class="persons">
-                    <div class="contnet-persons">
-                        <div class="valorDisponivel">
-                            <h1>Você possui <span id="scoreCamp"></span> moedas</h1>
-                        </div>
-                        <div id="person01">
-                            <img src="assets/imagens/giphy.gif" alt="" height="250px">
-                        </div>
-                        <div id="description">
-                            <div id="value-person">
-                                <img src="assets/imagens/coin.png" alt="" height="50px">
-                                <div id="value">
-                                    1
-                                </div>
-                            </div>
-                            <h2><span class="namePerson">Saltito</span> (Habilidade: Ele fala a dica ao interagir com ele)</h2>
-                            
-                            <button id="btn-person-local01" class="buy">Comprar</button>
-                            <span id="situation"></span>
-                        </div>
-                        <br>
-                    </div>
-                    <div class="contnet-persons">
-                        <div class="contnet-persons">
-                            <div id="person01">
-                                <img src="assets/imagens/person_2.gif" alt="" height="250px">
-                            </div>
-                            <div id="description">
-                                <div id="value-person">
-                                    <img src="assets/imagens/coin.png" alt="" height="50px">
-                                    <div id="value">
-                                        1
-                                    </div>
-                                </div>
-                                <h2><span class="namePerson">Sabichão</span> (Habilidade: Ele fala um pouco sobre a história de cada palavra)</h2>
-                                
-                                <button id="btn-person-local02" class="buy">Comprar</button>
-                                <span id="situation2"></span>
-                            </div>
-                            <br>
-                        </div>
-                    </div>
-                </main>
+            <div class="modal-body" id="contentPerson">
+                
             </div>
         
         </div>
     </div>
-
-    <div id="janelaApresentation" class="janelaApresentation">
+    <!-- Modal de apresentação -->
+    <div id="janelaApresentation" class="janelaApresentation janelaModal">
         <div id="modal" class="modal modalApresent">
             <div class="top-modal">
                 <button class="fechar" id="fechar">X</button>
@@ -136,14 +100,30 @@
                     </button>
                 </div>
             </div>
-            
         </div>
     </div>
+    <!-- Modal de configurações -->
+     <div class="janelaConf" id="janelaConf">
+        <div class="settings">
+            <div class="timeBar">
+                <label for="time">
+                    <span class="material-symbols-outlined timerIcon">
+                        timer
+                    </span><span>Tempo para as jogadas</span><input type="number" placeholder="5-60s" name="time" id="time" min="5" max="60">
+                </label>
+                <div class="btnAdd" onclick="addTimer()">
+                    <button>ADD</button> <span id="statusAdd"></span>
+                </div>
+            </div>
+            
+        </div>
+     </div>
 
-
+    <script src="js/functionSettings.js"></script>
     <script src="js/openModais.js"></script>
     <script src="js/main.js"></script>
     <script src="js/buyPerson.js"></script>
+    
     
     
 </body>
