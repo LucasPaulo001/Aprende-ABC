@@ -28,27 +28,50 @@ function recuperarTempo() {
 
 // Função que decrementa o cronômetro
 function Timer(value) {
-    // Garante que nenhum outro timer está rodando
-    clearInterval(timeLapse);
+    clearInterval(timeLapse); // Garante que nenhum outro timer está rodando
 
     let timeLeft = value; // Tempo atual
     LocalTimer.innerText = `Tempo: ${timeLeft}`;
-    LocalTimer.style.color = 'white'
+    LocalTimer.style.color = 'white';
+    let jogoPausado = false; // Variável para controlar o estado do jogo
 
-    // Inicia o cronômetro
     timeLapse = setInterval(() => {
         timeLeft--;
         LocalTimer.innerText = `Tempo: ${timeLeft}`;
-        if(timeLeft<=5){
-            LocalTimer.style.color='red'
+
+        if (timeLeft <= 5) {
+            LocalTimer.style.color = 'red';
         }
-        
+
         if (timeLeft < 0) {
             LocalTimer.innerHTML = '<h3>Tempo esgotado</h3>';
-            clearInterval(timeLapse); // Para o cronômetro
+            clearInterval(timeLapse);
+            jogoPausado = true;
+
+            // Exibe mensagem de final de jogo ou reinicia
+            alert("O tempo acabou! Reinicie o tempo para tentar novamente."); 
+            let restartGame = prompt('reiniciar? digite "sim" para reiniciar ou "não" para sair')  
+            if(restartGame == 'sim'){
+                reiniciarJogo()
+            }
+            else if(restartGame == 'não'){
+                location.reload()
+            }
         }
     }, 1000);
+
+    // Retorna o estado do jogo (ativo ou pausado)
+    return () => jogoPausado;
 }
+
+function reiniciarJogo() {
+    clearInterval(timeLapse); // Para o cronômetro atual
+    recuperarTempo(); // Reseta o tempo inicial
+    indiceAtual = 0; // Reseta o índice das palavras
+    alert("Jogo reiniciado!");
+    timer()
+}
+
 
 // Evento para iniciar o cronômetro ao abrir o jogo
 btnOpenGame.addEventListener('click', () => {

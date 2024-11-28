@@ -107,7 +107,9 @@
         <div class="settings">
             <div class="timeBar">
                 <label for="time">
-                    <span>Tempo para as jogadas</span><input type="number" placeholder="5-60s" name="time" id="time" min="5" max="60">
+                    <span class="material-symbols-outlined timerIcon">
+                        timer
+                    </span><span>Tempo para as jogadas</span><input type="number" placeholder="5-60s" name="time" id="time" min="5" max="60">
                 </label>
                 <div class="btnAdd" onclick="addTimer()">
                     <button>ADD</button> <span id="statusAdd"></span>
@@ -117,11 +119,11 @@
         </div>
      </div>
 
-
+    <script src="js/functionSettings.js"></script>
     <script src="js/openModais.js"></script>
     <script src="js/main.js"></script>
     <script src="js/buyPerson.js"></script>
-    <script src="js/functionSettings.js"></script>
+    
     
     
 </body>
