@@ -131,21 +131,25 @@ footer{
 }
 /*Janela modal, parte externa*/
 .janelaModal{
-    position: absolute;
+    position: fixed;
     background-color: #00000082;
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: 0;
     top: 0;
-    left: 0;
-    display: none;
+    display: flex;
+    overflow: hidden;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
     font-family: arial;
     color: rgba(255, 255, 255, 0.712);
+    transition: .4s ease-in-out;
 }
 /*Classe inserida a partir do js*/
 .janelaModal.abrir{
-    display: flex;
+    height: 100vh;
+    overflow: visible;
+    visibility: visible;
 }
 /*Animação de abertura*/
 .abrir .modal{
@@ -167,11 +171,19 @@ footer{
 }
 /*Parte do header da janela modal*/
 .top-modal{
+    position: sticky;
+    top: 0;
+    opacity: .2;
+    background-color: var(--decima-color);
     display: flex;
     justify-content: center;
     padding: 12px;
     flex-direction: column;
     align-items: center;
+    transition: .4s ease-in-out;
+}
+.top-modal:hover{
+    opacity: 1;
 }
 .modalContent{
     display: flex;
@@ -184,7 +196,6 @@ footer{
 #fechar{
     position: absolute;
     top: 3px;
-    right: 50%;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -478,6 +489,10 @@ footer{
     }
     .modalContent{
         height: 57%;
+    }
+    .modal.modalApresent{
+        display: flex;
+        align-items: center;
     }
     
 }

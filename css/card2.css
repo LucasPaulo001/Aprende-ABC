@@ -348,7 +348,12 @@
         font-size: 6vw;
     }
     .janelaModal{
-        height: 150vh;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        z-index: 9;
     }
     .janelaApresentation{
         height: 150vh;
